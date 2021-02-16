@@ -1,0 +1,9 @@
+			*** ABSTRACT CLASS: ***
+
+Definition : An abstract class is a class in which one or more methods are declared, but not 	     defined. The bodies of these methods are omitted.
+
+	     A class whose methods are defined in some other class are declared abstract. 		     That is the class is an incomplete class.
+
+abstract class: A class which does not provide the necessary body for all the methods of an 			interface should be declared abstract.
+
+Note: An abstract class cannot be instantiated.
