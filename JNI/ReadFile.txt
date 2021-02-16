@@ -1,0 +1,41 @@
+Native Methods:
+
+Although it is rare, occasionally, you may want to call a subroutine that is written in a
+language other than Java. Typically, such a subroutine exists as executable code for the CPU and environment in which you are working—that is, native code. For example,you may want to call a native code subroutine to achieve faster execution time. Or, you may want to use a specialized, third-party library, such as a statistical package.
+
+However, because Java programs are compiled to bytecode, which is then interpreted
+(or compiled on-the-fly) by the Java run-time system, it would seem impossible to call
+a native code subroutine from within your Java program. Fortunately, this conclusion
+is false. Java provides the native keyword, which is used to declare native code methods.
+Once declared, these methods can be called from inside your Java program just as you
+call any other Java method.
+
+To declare a native method, precede the method with the native modifier, but do
+not define any body for the method.
+
+Consider the NativeDemo Examples:
+---------------------------------
+
+step1: Write the java file and save it as NativeDemo.java
+
+step2: Compile the file as javac NativeDemo.java
+
+step3: Create the NativeDemo.h file from NativeDemo.java by the following command
+
+	*** javah -jni NativeDemo  ***
+	
+step4: Now open MicroVisualStudio and create a project which create a DLL file.
+
+step5: Write the file called NativeDemo.c, Build it and Run the application it will create a        file called NativeDemo.dll. Put this .dll and .h file under a package.
+
+step6: Run the Java program (i.e) NativeDemo.java. 
+
+
+Consider the Callbacks Example:
+-------------------------------
+
+This program demonstrates how to call a 'c' program from java and how to callback from 'java ' to 'c'.
+
+Same steps as above are followed for this program to execute.
+
+

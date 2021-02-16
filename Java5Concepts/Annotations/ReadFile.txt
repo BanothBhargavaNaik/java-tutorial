@@ -1,0 +1,26 @@
+The Override annotation:
+------------------------
+
+Tiger's first built-in annotation type is Override. Override should be used only on methods (not on classes, package declarations, or other constructs). It indicates that the annotated method is overriding a method in a superclass. 
+
+The @Override annotation annotates one method -- method2() -- to indicate that it overrides versions of the methods from the OverrideTester class's superclass (java.lang.Object). This might seem trivial at first, but it's actually a nice feature. You literally cannot compile this class without overriding these methods.
+
+The annotation also ensures that when you mess with method2() of Baseclass, you also have at least some indication that you should make sure that method2() still matches up. If not an Exception is thrown.
+
+
+
+
+The Deprecated annotation:
+--------------------------
+
+The next standard annotation type is Deprecated. Like Override,Deprecated is a marker annotation. As you might expect, you use Deprecated to annotate a method that shouldn't be used anymore.Unlike Override, Deprecated should be placed on the same line as the method being deprecated.
+
+You shouldn't expect anything unusual to happen when you compile this class on its own. But if you then use the deprecated method, either by overriding it or invoking it, the compiler processes the annotation, realizes that the method shouldn't be used,and issues an error message,
+
+
+The SuppressWarnings annotation:
+-------------------------------
+
+The last annotation type that you get "for free" with Tiger is SuppressWarnings. You shouldn't have any trouble figuring out what this one does, but it's not always obvious why this annotation type is so important. It's actually a side-effect of Tiger's all-new set
+of features. For example, consider generics; generics make all sorts of new type-safe operations possible, especially when it comes to Java collections. However, because of generics, the compiler now throws warnings when collections are used without type safety. That's helpful for code aimed at Tiger, but it makes writing code intended for Java 1.4.x or earlier a real pain. You'll constantly receive warnings about things that you're not at all concerned about.
+
